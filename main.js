@@ -35,17 +35,45 @@ function tie() {
 
 //  VI. create a function result() that compares between the entered values and executes output functions accordingly.
 function result(pChoice, cChoice) {
-  //      0. if computerChoice === playerChoice execute tie() and return 'tie'.
+  //  if computerChoice === playerChoice execute tie() and return 'tie'.
   if (pChoice === cChoice) {
     tie();
     return "tie";
   }
-  //      1. if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
-  //      2. else execute computerWins() and return 'computerWins' .
-  //      3. else if computer chose paper: if player chose scissors run playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins' .
-  //      4. else if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins'.
+  // if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
+  else
+    switch (cChoice) {
+      case "rock":
+        if (pChoice === "paper") {
+          playerWins();
+          return "playerWins";
+        } else {
+          // else execute computerWins() and return 'computerWins' .
+          computerWins();
+          return "computerWins";
+        } // if computer chose paper: if player chose scissors run playerWins() and return 'playerWins'
+      case "paper":
+        if (pChoice === "scissors") {
+          playerWins();
+          return "playerWins";
+          // else execute computerWins(), return 'computerWins' .
+        } else {
+          computerWins();
+          return "computerWins";
+        } // if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins'
+      case "scissors":
+        if (pChoice === "rock") {
+          playerWins();
+          return "playerWins";
+        } else {
+          // else execute computerWins(), return 'computerWins'.
+          computerWins();
+          return "computerWins";
+        }
+    }
 }
 //  VII. create a function called game()
+
 //      1. it should loop until the player or the computer has a scorer of five
 //      2. should call  result()
 //      3. if result() returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
