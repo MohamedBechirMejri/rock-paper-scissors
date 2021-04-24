@@ -78,19 +78,21 @@ function result(plChoice, coChoice) {
 }
 //  VII. create a function called game()
 function game() {
+  // it should loop until the player or the computer has a scorer of five
   for ((pScore = 0) && (cScore = 0); pScore < 5 && cScore < 5; ) {
     computerChoice();
     playerChoice();
+    //  should call  result()
     let whoWon = result(pChoice, cChoice);
+    // if result() returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
     whoWon === "playerWins"
       ? ++pScore
       : whoWon === "computerWins"
       ? ++cScore
       : "";
-      console.log(`The current Score is Player ${pScore} - ${cScore} Computer`);
-      if (pScore === 5 || cScore === 5) { console.log('Game Over') }
+    console.log(`The current Score is Player ${pScore} - ${cScore} Computer`);
+    if (pScore === 5 || cScore === 5) {
+      console.log("Game Over");
+    }
   }
 }
-//      1. it should loop until the player or the computer has a scorer of five
-//      2. should call  result()
-//      3. if result() returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
