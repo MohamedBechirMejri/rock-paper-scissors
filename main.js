@@ -7,7 +7,12 @@ function computerChoice() {
 
 //  II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
 function playerChoice() {
-  return prompt("Rock? Paper? or Scissors?").toLowerCase();
+  const RPS = prompt("Rock? Paper? or Scissors?");
+  if (/rock/i.test(RPS) || /paper/i.test(RPS) || /scissors/i.test(RPS)) {
+    return RPS.toLowerCase();
+  } else {
+    playerChoice();
+  }
 }
 //  III. create a function playerWins() that outputs 'playerChoice beats computerChoice'
 //  IV. create a function computerWins() that outputs 'computerChoice beats playerChoice'
