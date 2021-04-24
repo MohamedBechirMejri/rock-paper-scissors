@@ -5,6 +5,7 @@ let cChoice, pChoice;
 function computerChoice() {
   const RPS = ["rock", "paper", "scissors"];
   cChoice = RPS[(Math.random() * RPS.length) | 0];
+  return cChoice;
 }
 
 //  II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
@@ -12,6 +13,7 @@ function playerChoice() {
   const RPS = prompt("Rock? Paper? or Scissors?");
   if (/rock/i.test(RPS) || /paper/i.test(RPS) || /scissors/i.test(RPS)) {
     pChoice = RPS.toLowerCase();
+    return pChoice;
   } else {
     playerChoice();
   }
