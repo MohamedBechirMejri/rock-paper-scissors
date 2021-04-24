@@ -1,5 +1,5 @@
 //  0. Variables
-let cChoice, pChoice;
+let cChoice, pChoice, cScore, pScore;
 //  I. we should make computerChoice() which tells the computer return a a random value between 'rock', 'paper' and 'scissors'.
 
 function computerChoice() {
