@@ -1,19 +1,22 @@
+//  0. Variables
+let cChoice, pChoice;
 //  I. we should make computerChoice() which tells the computer return a a random value between 'rock', 'paper' and 'scissors'.
 
 function computerChoice() {
   const RPS = ["rock", "paper", "scissors"];
-  return RPS[(Math.random() * RPS.length) | 0];
+  cChoice = RPS[(Math.random() * RPS.length) | 0];
 }
 
 //  II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
 function playerChoice() {
   const RPS = prompt("Rock? Paper? or Scissors?");
   if (/rock/i.test(RPS) || /paper/i.test(RPS) || /scissors/i.test(RPS)) {
-    return RPS.toLowerCase();
+    pChoice = RPS.toLowerCase();
   } else {
     playerChoice();
   }
 }
+
 //  III. create a function playerWins() that outputs 'playerChoice beats computerChoice'
 //  IV. create a function computerWins() that outputs 'computerChoice beats playerChoice'
 //  V. create a function tie() that outputs 'tie, both of you chose playerChoice'.
@@ -25,5 +28,5 @@ function playerChoice() {
 //      4. else if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins'.
 //  VII. create a function called game()
 //      1. it should loop until the player or the computer has a scorer of five
-//      2. should call computerChoice() then playerChoice() then result()
+//      2. should call  result()
 //      3. if result() returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
