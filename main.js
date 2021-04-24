@@ -20,7 +20,13 @@ function playerChoice() {
 }
 
 //  III. create a function playerWins() that outputs 'playerChoice beats computerChoice'
+function playerWins() {
+  return `Your ${pChoice} Beats His ${cChoice}. Hurray!`;
+}
 //  IV. create a function computerWins() that outputs 'computerChoice beats playerChoice'
+function computerWins() {
+  return `His ${cChoice} Beats Your ${pChoice}. Too Bad!`;
+}
 //  V. create a function tie() that outputs 'tie, both of you chose playerChoice'.
 //  VI. create a function result() that compares between the entered values and executes output functions accordingly.
 //      0. if computerChoice === playerChoice execute tie() and return 'tie'.
