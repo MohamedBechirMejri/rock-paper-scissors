@@ -21,16 +21,16 @@ function playerChoice() {
 
 //  III. create a function playerWins() that outputs 'playerChoice beats computerChoice'
 function playerWins() {
-  return `Your ${pChoice} Beats His ${cChoice}. Hurray!`;
+  console.log(`Your ${pChoice} Beats His ${cChoice}. Hurray!`);
 }
 //  IV. create a function computerWins() that outputs 'computerChoice beats playerChoice'
 function computerWins() {
-  return `His ${cChoice} Beats Your ${pChoice}. Too Bad!`;
+  console.log(`His ${cChoice} Beats Your ${pChoice}. Too Bad!`);
 }
 //  V. create a function tie() that outputs 'tie, both of you chose playerChoice'.
 
 function tie() {
-  return `It's a tie, both of you chose ${pChoice}.`;
+  console.log(`It's a tie, both of you chose ${pChoice}.`);
 }
 
 //  VI. create a function result() that compares between the entered values and executes output functions accordingly.
@@ -73,7 +73,9 @@ function result(pChoice, cChoice) {
     }
 }
 //  VII. create a function called game()
+function game() {
 
+}
 //      1. it should loop until the player or the computer has a scorer of five
 //      2. should call  result()
 //      3. if result() returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
