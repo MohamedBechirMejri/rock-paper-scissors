@@ -1,11 +1,15 @@
 //  I. we should make computerChoice() which tells the computer return a a random value between 'rock', 'paper' and 'scissors'.
 
 function computerChoice() {
-    const RPS = ['rock', 'paper', 'scissors']
-    return RPS[(Math(random) * RPS.length) | 0 ]
-    }
+  const RPS = ["rock", "paper", "scissors"];
+  return RPS[(Math(random) * RPS.length) | 0];
+}
 
 //  II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
+function playerChoice() {
+  const RPS = prompt("Rock? Paper? or Scissors?");
+  return RPS.toLowerCase;
+}
 //  III. create a function playerWins() that outputs 'playerChoice beats computerChoice'
 //  IV. create a function computerWins() that outputs 'computerChoice beats playerChoice'
 //  V. create a function tie() that outputs 'tie, both of you chose playerChoice'.
