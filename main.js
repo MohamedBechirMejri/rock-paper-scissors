@@ -34,11 +34,17 @@ function tie() {
 }
 
 //  VI. create a function result() that compares between the entered values and executes output functions accordingly.
-//      0. if computerChoice === playerChoice execute tie() and return 'tie'.
-//      1. if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
-//      2. else execute computerWins() and return 'computerWins' }}.
-//      3. else if computer chose paper: if player chose scissors run playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins' }}.
-//      4. else if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins'.
+function result(pChoice, cChoice) {
+  //      0. if computerChoice === playerChoice execute tie() and return 'tie'.
+  if (pChoice === cChoice) {
+    tie();
+    return "tie";
+  }
+  //      1. if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
+  //      2. else execute computerWins() and return 'computerWins' .
+  //      3. else if computer chose paper: if player chose scissors run playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins' .
+  //      4. else if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins' else execute computerWins(), return 'computerWins'.
+}
 //  VII. create a function called game()
 //      1. it should loop until the player or the computer has a scorer of five
 //      2. should call  result()
