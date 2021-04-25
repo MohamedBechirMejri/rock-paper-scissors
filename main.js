@@ -113,7 +113,13 @@ function game() {
 			: whoWon === "computerWins"
 			? ++cScore
 			: "";
+
+		// display current score to the user
+
 		console.log(`The current Score is Player ${pScore} - ${cScore} Computer`);
+
+		// if the player or the computer has a score of 5, end the game.
+
 		if (pScore === 5 || cScore === 5) {
 			console.log("Game Over");
 		}
