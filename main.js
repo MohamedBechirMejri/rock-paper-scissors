@@ -96,7 +96,7 @@ function result(plChoice, coChoice) {
 //  VII. create a function called game()
 
 function game() {
-	// it should loop until the player or the computer has a scorer of five
+	// it should loop until the player or the computer has a score of five
 
 	for ((pScore = 0) && (cScore = 0); pScore < 5 && cScore < 5; ) {
 		computerChoice();
