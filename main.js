@@ -3,8 +3,8 @@
 let cChoice,
 	pChoice,
 	cScore = 0,
-    pScore = 0;
-    
+	pScore = 0;
+
 //  I. we should make computerChoice() which tells the computer return a a random value between 'rock', 'paper' and 'scissors'.
 
 function computerChoice() {
@@ -16,9 +16,8 @@ function computerChoice() {
 //  II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
 
 function playerChoice() {
+	const RPS = prompt("Rock? Paper? or Scissors?");
 
-    const RPS = prompt("Rock? Paper? or Scissors?");
-    
 	if (/rock/i.test(RPS) || /paper/i.test(RPS) || /scissors/i.test(RPS)) {
 		pChoice = RPS.toLowerCase();
 		return pChoice;
@@ -49,50 +48,43 @@ function tie() {
 //  VI. create a function result() that compares between the entered values and executes output functions accordingly.
 
 function result(plChoice, coChoice) {
-
 	//  if computerChoice === playerChoice execute tie() and return 'tie'.
 
 	if (plChoice === coChoice) {
 		tie();
 		return "tie";
-    }
-    
-	// if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
+	}
 
+	// if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
 	else
 		switch (coChoice) {
 			case "rock":
 				if (plChoice === "paper") {
 					playerWins();
 					return "playerWins";
-                } else {
-                    
+				} else {
 					// else execute computerWins() and return 'computerWins' .
 
 					computerWins();
-                    return "computerWins";
-                    
-                } // if computer chose paper: if player chose scissors run playerWins() and return 'playerWins'
-                
+					return "computerWins";
+				} // if computer chose paper: if player chose scissors run playerWins() and return 'playerWins'
+
 			case "paper":
 				if (plChoice === "scissors") {
 					playerWins();
-                    return "playerWins";
-                    
-					// else execute computerWins(), return 'computerWins' .
+					return "playerWins";
 
+					// else execute computerWins(), return 'computerWins' .
 				} else {
 					computerWins();
-                    return "computerWins";
-                    
-                } // if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins'
-                
+					return "computerWins";
+				} // if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins'
+
 			case "scissors":
 				if (plChoice === "rock") {
 					playerWins();
 					return "playerWins";
-                } else {
-                    
+				} else {
 					// else execute computerWins(), return 'computerWins'.
 
 					computerWins();
@@ -104,15 +96,14 @@ function result(plChoice, coChoice) {
 //  VII. create a function called game()
 
 function game() {
-
 	// it should loop until the player or the computer has a scorer of five
 
 	for ((pScore = 0) && (cScore = 0); pScore < 5 && cScore < 5; ) {
 		computerChoice();
-        playerChoice();
-        
+		playerChoice();
+
 		//  should call  result()
-        
+
 		let whoWon = result(pChoice, cChoice);
 
 		// if result() returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
