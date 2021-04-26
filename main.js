@@ -112,8 +112,6 @@ function game() {
     computerChoice();
     playerChoice();
 
-    //  should call  result()
-
     let whoWon = result(playerChoice, computerChoice);
 
     // if result returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
