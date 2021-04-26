@@ -7,7 +7,7 @@ let playerScore = 0;
 
 // I. we should make the computer return a a random value between 'rock', 'paper' and 'scissors'.
 
-function computerChoice() {
+function pickComputerChoice() {
   const rockPaperScissors = ["rock", "paper", "scissors"];
   computerChoice =
     rockPaperScissors[(Math.random() * rockPaperScissors.length) | 0];
@@ -16,7 +16,7 @@ function computerChoice() {
 
 // II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
 
-function playerChoice() {
+function requestPlayerChoice() {
   const rockPaperScissors = prompt("Rock? Paper? or Scissors?");
 
   if (
@@ -28,7 +28,7 @@ function playerChoice() {
     return playerChoice;
   } else {
     console.log("offffffff");
-    playerChoice();
+    requestPlayerChoice();
   }
 }
 
@@ -109,8 +109,8 @@ function game() {
     playerScore < 5 && computerScore < 5;
 
   ) {
-    computerChoice();
-    playerChoice();
+    pickComputerChoice();
+    requestPlayerChoice();
 
     let whoWon = result(playerChoice, computerChoice);
 
