@@ -20,9 +20,9 @@ function requestPlayerChoice() {
   const rockPaperScissors = prompt("Rock? Paper? or Scissors?");
 
   if (
-    /rock/i.test(rockPaperScissors) ||
-    /paper/i.test(rockPaperScissors) ||
-    /scissors/i.test(rockPaperScissors)
+    /^rock$/i.test(rockPaperScissors) ||
+    /^paper$/i.test(rockPaperScissors) ||
+    /^scissors$/i.test(rockPaperScissors)
   ) {
     playerChoice = rockPaperScissors.toLowerCase();
     return playerChoice;
