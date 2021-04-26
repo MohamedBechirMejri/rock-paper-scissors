@@ -1,26 +1,31 @@
 // 0. Variables
 
-let cChoice;
-let pChoice;
-let cScore = 0;
-let pScore = 0;
+let computerChoice;
+let playerChoice;
+let computerScore = 0;
+let playerScore = 0;
 
 // I. we should make the computer return a a random value between 'rock', 'paper' and 'scissors'.
 
 function computerChoice() {
-  const RPS = ["rock", "paper", "scissors"];
-  cChoice = RPS[(Math.random() * RPS.length) | 0];
-  return cChoice;
+  const rockPaperScissors = ["rock", "paper", "scissors"];
+  computerChoice =
+    rockPaperScissors[(Math.random() * rockPaperScissors.length) | 0];
+  return computerChoice;
 }
 
 // II. then ask the player to input a value of 'rock', 'paper' and 'scissors' (case insensitive) playerChoice().
 
 function playerChoice() {
-  const RPS = prompt("Rock? Paper? or Scissors?");
+  const rockPaperScissors = prompt("Rock? Paper? or Scissors?");
 
-  if (/rock/i.test(RPS) || /paper/i.test(RPS) || /scissors/i.test(RPS)) {
-    pChoice = RPS.toLowerCase();
-    return pChoice;
+  if (
+    /rock/i.test(rockPaperScissors) ||
+    /paper/i.test(rockPaperScissors) ||
+    /scissors/i.test(rockPaperScissors)
+  ) {
+    playerChoice = rockPaperScissors.toLowerCase();
+    return playerChoice;
   } else {
     console.log("offffffff");
     playerChoice();
@@ -30,36 +35,36 @@ function playerChoice() {
 //  III. create a function playerWins() that outputs 'playerChoice beats computerChoice'
 
 function playerWins() {
-  console.log(`Your ${pChoice} Beats His ${cChoice}. Hurray!`);
+  console.log(`Your ${playerChoice} Beats His ${computerChoice}. Hurray!`);
 }
 
 //  IV. create a function computerWins() that outputs 'computerChoice beats playerChoice'
 
 function computerWins() {
-  console.log(`His ${cChoice} Beats Your ${pChoice}. Too Bad!`);
+  console.log(`His ${computerChoice} Beats Your ${playerChoice}. Too Bad!`);
 }
 
 //  V. create a function tie() that outputs 'tie, both of you chose playerChoice'.
 
 function tie() {
-  console.log(`It's a tie, both of you chose ${pChoice}.`);
+  console.log(`It's a tie, both of you chose ${playerChoice}.`);
 }
 
 //  VI. create a function result() that compares between the entered values and executes output functions accordingly.
 
-function result(plChoice, coChoice) {
+function result(playersChoice, computersChoice) {
   // if computerChoice === playerChoice execute tie() and return 'tie'.
 
-  if (plChoice === coChoice) {
+  if (playersChoice === computersChoice) {
     tie();
     return "tie";
   }
 
   // if computer chose rock: if player chose paper then execute playerWins() and return 'playerWins'
   else {
-    switch (coChoice) {
+    switch (computersChoice) {
       case "rock":
-        if (plChoice === "paper") {
+        if (playersChoice === "paper") {
           playerWins();
           return "playerWins";
         } else {
@@ -70,7 +75,7 @@ function result(plChoice, coChoice) {
         } // if computer chose paper: if player chose scissors run playerWins() and return 'playerWins'
 
       case "paper":
-        if (plChoice === "scissors") {
+        if (playersChoice === "scissors") {
           playerWins();
           return "playerWins";
 
@@ -81,7 +86,7 @@ function result(plChoice, coChoice) {
         } // if computer chose scissors: if player chose rock execute playerWins() and return 'playerWins'
 
       case "scissors":
-        if (plChoice === "rock") {
+        if (playersChoice === "rock") {
           playerWins();
           return "playerWins";
         } else {
@@ -99,29 +104,35 @@ function result(plChoice, coChoice) {
 function game() {
   // it should loop until the player or the computer has a score of five
 
-  for ((pScore = 0) && (cScore = 0); pScore < 5 && cScore < 5; ) {
+  for (
+    (playerScore = 0) && (computerScore = 0);
+    playerScore < 5 && computerScore < 5;
+
+  ) {
     computerChoice();
     playerChoice();
 
     //  should call  result()
 
-    let whoWon = result(pChoice, cChoice);
+    let whoWon = result(playerChoice, computerChoice);
 
     // if result returns 'playerWins' add +1 to userScore, if it returns 'computerWins' add +1 to computerScore if neither then do nothing.
 
     whoWon === "playerWins"
-      ? ++pScore
+      ? ++playerScore
       : whoWon === "computerWins"
-      ? ++cScore
+      ? ++computerScore
       : "";
 
     // display current score to the user
 
-    console.log(`The current Score is Player ${pScore} - ${cScore} Computer`);
+    console.log(
+      `The current Score is Player ${playerScore} - ${computerScore} Computer`
+    );
 
     // if the player or the computer has a score of 5, end the game.
 
-    if (pScore === 5 || cScore === 5) {
+    if (playerScore === 5 || computerScore === 5) {
       console.log("Game Over");
     }
   }
