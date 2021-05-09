@@ -5,7 +5,7 @@ let playerScore = 0;
 
 const buttons = document.querySelectorAll(".choices");
 const score = document.getElementById("score");
-let currentScore = score.innerText;
+
 let comments = document.getElementById("comments");
 function pickComputerChoice() {
   const rockPaperScissors = ["rock", "paper", "scissors"];
@@ -61,11 +61,30 @@ function result(playersChoice, computersChoice) {
     }
   }
 }
+function game() {
+  let whoWon = result(playerChoice, computerChoice);
+
+  whoWon === "playerWins"
+    ? ++playerScore
+    : whoWon === "computerWins"
+    ? ++computerScore
+    : "";
+
+  score.innerText = ` ${playerScore} - ${computerScore} `;
+
+  if (playerScore === 5 || computerScore === 5) {
+    playerScore === 5
+      ? (comments.innerText = `You Win, Congratulations`)
+      : (comments.innerText = `You Lose, Better Luck Next Time :(`);
+    playerScore = 0;
+    computerScore = 0;
+  }
+}
 
 buttons.forEach((button) =>
   button.addEventListener("click", () => {
     playerChoice = button.value;
     pickComputerChoice();
-    result(playerChoice, computerChoice);
+    game();
   })
 );
