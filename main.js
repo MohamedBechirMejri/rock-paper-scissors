@@ -27,7 +27,7 @@ function computerWins() {
 function tie() {
   comments.innerText = `It's a tie, both of you chose ${playerChoice}.`;
   comments.style.color = "blue";
-}
+} 
 function result(playersChoice, computersChoice) {
   if (playersChoice === computersChoice) {
     tie();
