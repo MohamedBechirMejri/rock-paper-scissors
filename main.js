@@ -6,7 +6,7 @@ let playerScore = 0;
 const buttons = document.querySelectorAll(".choices");
 const score = document.getElementById("score");
 let currentScore = score.innerText;
-let comments =
+let comments = document.getElementById("comments");
 function pickComputerChoice() {
   const rockPaperScissors = ["rock", "paper", "scissors"];
   computerChoice =
@@ -15,15 +15,15 @@ function pickComputerChoice() {
 }
 
 function playerWins() {
-  console.log(`Your ${playerChoice} Beats His ${computerChoice}. Hurray!`);
+  comments.innerText = `Your ${playerChoice} Beats His ${computerChoice}. Hurray!`;
 }
 
 function computerWins() {
-  console.log(`His ${computerChoice} Beats Your ${playerChoice}. Too Bad!`);
+  comments.innerText = `His ${computerChoice} Beats Your ${playerChoice}. Too Bad!`;
 }
 
 function tie() {
-  console.log(`It's a tie, both of you chose ${playerChoice}.`);
+  comments.innerText = `It's a tie, both of you chose ${playerChoice}.`;
 }
 function result(playersChoice, computersChoice) {
   if (playersChoice === computersChoice) {
